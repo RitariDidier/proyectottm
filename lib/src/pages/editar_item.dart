@@ -31,6 +31,7 @@ class _EditarItemState extends State<EditarItem> {
               height: 30,
             ),
             _botonEditar(),
+            _botonAtras(),
           ],
         ),
       ),
@@ -94,6 +95,16 @@ class _EditarItemState extends State<EditarItem> {
         padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         child: const Text('Editar item', style: TextStyle(fontSize: 20)),
       ),
+    );
+  }
+
+  Widget _botonAtras() {
+    return FloatingActionButton(
+      child: Icon(Icons.arrow_back),
+      onPressed: () {
+        Navigator.pushReplacementNamed(context, 'item');
+        //Navigator.pop(context);
+      },
     );
   }
 }
