@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyectottm/src/pages/agregar.dart';
 
 class AgregarItem extends StatefulWidget {
   @override
@@ -44,7 +45,10 @@ class _AgregarItemState extends State<AgregarItem> {
   Widget _agregarBoton() {
     return Center(
       child: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, 'agregar');
+          setState(() {});
+        },
         child: Icon(
           Icons.add,
           color: Colors.black,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyectottm/src/pages/agregar_item.dart';
 import 'package:proyectottm/src/pages/login_page.dart';
+import 'package:proyectottm/src/pages/agregar.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'login': (BuildContext context) => LoginPage(),
         'item': (BuildContext context) => AgregarItem(),
+        'agregar': (BuildContext context) => AgregarItemPage(),
       },
     );
   }
