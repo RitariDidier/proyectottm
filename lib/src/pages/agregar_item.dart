@@ -18,6 +18,9 @@ class _AgregarItemState extends State<AgregarItem> {
             children: <Widget>[
               _agregarBoton(),
               _widgetBusqueda(),
+              SizedBox(
+                height: 10,
+              ),
               _mostrarResultados(),
             ],
           ),
@@ -77,6 +80,12 @@ class _AgregarItemState extends State<AgregarItem> {
             ),
           ],
         ),
+        Padding(
+          padding: EdgeInsets.only(),
+          child: Divider(
+            color: Colors.red,
+          ),
+        ),
         _contenedorItems(),
       ]),
     );
@@ -89,11 +98,11 @@ class _AgregarItemState extends State<AgregarItem> {
         children: <Widget>[
           Divider(),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Icon(
                 Icons.food_bank,
-                size: 30,
+                size: 45,
               ),
               Text(
                 'Manzana',
