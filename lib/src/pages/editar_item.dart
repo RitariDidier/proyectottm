@@ -10,7 +10,20 @@ class _EditarItemState extends State<EditarItem> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: Color.fromRGBO(108, 192, 218, 1.0),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.bottomLeft,
+          end: Alignment.topRight,
+          stops: [0, 0.25, 0.5, 0.75, 1],
+          colors: [
+            Color(0xFF95afc0),
+            Color(0xFFc7ecee),
+            Color(0xFF95afc0),
+            Color(0xFFc7ecee),
+            Color(0xFF95afc0),
+          ],
+        ),
+      ),
       padding: EdgeInsets.only(top: 20),
       child: SafeArea(
         child: Column(
@@ -28,7 +41,7 @@ class _EditarItemState extends State<EditarItem> {
             _inputItemData("Stock", TextInputType.number),
             _inputItemData("Categoría", TextInputType.text),
             SizedBox(
-              height: 30,
+              height: 50,
             ),
             _botonEditar(),
           ],
@@ -53,6 +66,8 @@ class _EditarItemState extends State<EditarItem> {
         textCapitalization: TextCapitalization.sentences,
         keyboardType: keyboardType,
         decoration: InputDecoration(
+            fillColor: Color(0xFFf5f6fa),
+            filled: true,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             hintText: field),
         //suffixIcon: Icon(Icons.search)),
@@ -69,6 +84,8 @@ class _EditarItemState extends State<EditarItem> {
         //autofocus: false,
         textCapitalization: TextCapitalization.sentences,
         decoration: InputDecoration(
+            fillColor: Color(0xFFf5f6fa),
+            filled: true,
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             hintText: field),
         //suffixIcon: Icon(Icons.search)),
@@ -85,9 +102,8 @@ class _EditarItemState extends State<EditarItem> {
         decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: <Color>[
-                Color(0xFF0D47A1),
-                Color(0xFF1976D2),
-                Color(0xFF42A5F5),
+                Color(0xFF6a89cc),
+                Color(0xFF4a69bd),
               ],
             ),
             borderRadius: BorderRadius.all(Radius.circular(80.0))),
