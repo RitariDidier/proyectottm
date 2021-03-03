@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: SafeArea(
           child: Container(
-            color: Color.fromRGBO(108, 192, 218, 0.50),
+            //color: Color.fromRGBO(108, 192, 218, 0.50),
             padding: EdgeInsets.only(top: 100),
             child: Column(
               children: <Widget>[
@@ -35,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 20,
                 ),
+                _botonLogin(),
               ],
             ),
           ),
@@ -78,14 +79,15 @@ class _LoginPageState extends State<LoginPage> {
   Widget _crearEmail() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-      child: TextField(
+      child: TextFormField(
         autofocus: false,
+        textAlign: TextAlign.center,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
           hintText: 'Email',
-          labelText: 'Email',
-          //helperText: 'Correo@gmail.com',
+          suffixIcon: Icon(Icons.mail),
+          //labelText: 'Email',
         ),
       ),
     );
@@ -97,12 +99,11 @@ class _LoginPageState extends State<LoginPage> {
       child: TextField(
         autofocus: false,
         obscureText: true,
+        textAlign: TextAlign.center,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
           hintText: 'Password',
-          labelText: 'Password',
-          //helperText: 'Correo@gmail.com',
           suffixIcon: Icon(Icons.lock_open),
         ),
         onChanged: (valor) {
@@ -113,4 +114,36 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  Widget _botonLogin() {
+    return RaisedButton(
+      onPressed: () {
+        Navigator.pushReplacementNamed(context, 'item');
+      },
+      textColor: Colors.white,
+      padding: const EdgeInsets.all(0.0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+      child: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: <Color>[
+                Color(0xFF0D47A1),
+                Color(0xFF1976D2),
+                Color(0xFF42A5F5),
+              ],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(80.0))),
+        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        child: const Text('Ingresar', style: TextStyle(fontSize: 20)),
+      ),
+    );
+  }
 }
+
+// floatingActionButton: FloatingActionButton(
+//         child: Icon(Icons.arrow_back),
+//         onPressed: () {
+//           Navigator.pushReplacementNamed(context, 'item');
+//           Navigator.pop(context);
+//         },
+//       ),

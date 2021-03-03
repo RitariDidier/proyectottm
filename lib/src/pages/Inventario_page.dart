@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AgregarItem extends StatefulWidget {
+class InventarioPage extends StatefulWidget {
   @override
-  _AgregarItemState createState() => _AgregarItemState();
+  _InventarioPageState createState() => _InventarioPageState();
 }
 
-class _AgregarItemState extends State<AgregarItem> {
+class _InventarioPageState extends State<InventarioPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +44,9 @@ class _AgregarItemState extends State<AgregarItem> {
   Widget _agregarBoton() {
     return Center(
       child: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, 'add');
+        },
         child: Icon(
           Icons.add,
           color: Colors.black,
@@ -99,17 +101,19 @@ class _AgregarItemState extends State<AgregarItem> {
                 'Manzana',
                 style: TextStyle(fontSize: 20),
               ),
-              Icon(
-                Icons.edit,
-                size: 30,
+              IconButton(
+                icon: Icon(Icons.edit),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, 'edit');
+                },
               ),
-              Icon(
-                Icons.delete,
-                size: 30,
+              IconButton(
+                icon: Icon(Icons.delete),
+                onPressed: () {},
               ),
-              Icon(
-                Icons.chevron_right_sharp,
-                size: 30,
+              IconButton(
+                icon: Icon(Icons.arrow_forward_ios_outlined),
+                onPressed: () {},
               ),
             ],
           ),
